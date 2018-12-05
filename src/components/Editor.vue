@@ -1,7 +1,7 @@
 <template>
   <div class="editor">
     <h1>エディター画面</h1>
-    <span>{{ userData.displayName }}</span>
+    <button @click="console">con</button>
     <button @click="logout">s</button>
   </div>
 </template>
@@ -9,11 +9,12 @@
 <script>
 export default{
   name:"editor",
-  props : ["userData"],
+  props : ["user"],
   data(){
     return {};
   },
   methods : {
+    console: function(){console.log(user)},
     logout: function(){
       firebase.auth().signOut();
     }
