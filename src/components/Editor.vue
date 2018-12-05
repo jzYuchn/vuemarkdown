@@ -1,7 +1,7 @@
 <template>
   <div class="editor">
     <h1>エディター画面</h1>
-    <span>{{ user.displayName }}</span>
+    <span>{{ userData.displayName }}</span>
     <button @click="logout">s</button>
   </div>
 </template>
@@ -9,7 +9,7 @@
 <script>
 export default{
   name:"editor",
-  props : ["user"],
+  props : ["userData"],
   data(){
     return {};
   },
