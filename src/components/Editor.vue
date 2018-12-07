@@ -5,12 +5,13 @@
     <button @click="logout">ログアウト</button>
     <div class="editoroWrapper">
       <textarea class="markdown" v-model="markdown"></textarea>
+      <div class="preview" v-html="preview()"></div>
     </div>
-    <div class="preview" v-html="preview()"></div>
   </div>
 </template>
 
 <script>
+import marked from "marked";
 export default{
   name:"editor",
   props : ['user'],
