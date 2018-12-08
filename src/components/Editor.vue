@@ -11,6 +11,7 @@
           </p>
         </div>
         <button class="addMemoBtn" @click="addMemo">メモの追加</button>
+        <button class="deleteMemoBtn" v-if="memos.length > 1" @click="deleteMemo">選択中のメモを消去</button>
       </div>
         <textarea class="markdown" v-model="memos[selectedIndex].markdown"></textarea>
         <div class="preview" v-html="preview()"></div>
@@ -42,6 +43,12 @@ export default{
         markdown: "無題のメモ"
       });
     },
+    deleteMemo: function(){
+      this.memos.splice(this.selectedIndex,1);
+      if (this.selectedIndex >0 ) {
+        tehis.selectedIndex--;
+      }
+    },
     selectMemo: function(index){
       this.selectedIndex = index;
     },
@@ -66,6 +73,9 @@ export default{
   text-align:1px solid #000;
   &:nth-child(even){
     beckground-color: #ccf;
+  }
+  &[data-selected="true"]{
+    background-color: #ccf;
   }
 }
 .memoTitle {
