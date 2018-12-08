@@ -10,6 +10,7 @@
             {{ displayTitle(memo.markdown)}}
           </p>
         </div>
+        <button class="addMemoBtn" @click="addMemo">メモの追加</button>
         <textarea class="markdown" v-model="memos[selectedIndex].markdown"></textarea>
         <div class="preview" v-html="preview()"></div>
       </div>
