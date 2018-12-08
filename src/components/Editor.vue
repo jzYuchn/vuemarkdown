@@ -37,13 +37,14 @@ export default{
   },
   created: function() {
     firebase
-     .database()
-     .ref('memos/' + this.user.uid)
-     .then(result => {
-      if (result.val()){
-        this.memos = reesult.val();
-      }
-    })
+      .database()
+      .ref("memos/" + this.user.uid)
+      .once("value")
+      .then(result => {
+        if (result.val()) {
+          this.memos = result.val();
+        }
+      });
   },
   mounted: function(){
     document.onkeydown = e => {
