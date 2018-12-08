@@ -3,7 +3,7 @@
     <h1>エディター画面</h1>
     <span>{{user.displayName}}</span>
     <button @click="logout">ログアウト</button>
-    <div>
+    <div class="editorWrapper">
       <div class="memoListWrapper">
         <div class="memoList" v-for="(memo,index) in memos" @click="selectMemo(index)" :data-selected="index == selectedIndex">
           <p class="memoTitle">
@@ -46,19 +46,20 @@ export default{
         }
       });
   },
-  mounted: function(){
+  mounted: function() {
     document.onkeydown = e => {
-      if (e.key == 's' && e.metakey){
+      if (e.key == "s" && (e.metaKey || e.ctrlKey)) {
         this.saveMemos();
         return false;
       }
-    }
+    };
   },
   beforeDestroy: function() {
     document.onkeydown = null;
   },
   methods : {
     logout: function(){
+      console.log("click");
       firebase.auth().signOut();
     },
     addMemo: function(){
@@ -81,16 +82,18 @@ export default{
     displayTitle: function(text){
       return text.split(/\n/)[0];
     },
-    savaMemos: function(){
+    saveMemos: function(){
       firebase.database().ref('memos/' + this.user.uid).set(this.memos);
     }
   }
 };
 </script>
 <style lang="scss" scoped>
+.editorWrapper {
+  display: flex;
+}
 .memoListWrapper {
-  width: 19%;
-  float: left;
+  width: 20%;
   border-top: 1px solid #000;
 }
 .memoList {
@@ -117,12 +120,10 @@ export default{
   margin: 10px;
 }
 .markdown {
-  float : left;
   width: 40%;
   height: 500px;
 }
 .preview {
-  float: left;
   width: 40%;
   text-aligin: left;
 }
