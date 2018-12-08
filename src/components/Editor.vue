@@ -11,9 +11,9 @@
           </p>
         </div>
         <button class="addMemoBtn" @click="addMemo">メモの追加</button>
+      </div>
         <textarea class="markdown" v-model="memos[selectedIndex].markdown"></textarea>
         <div class="preview" v-html="preview()"></div>
-      </div>
     </div>
   </div>
 </template>
