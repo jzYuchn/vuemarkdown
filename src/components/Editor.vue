@@ -78,7 +78,7 @@ export default{
 }
 .markdown {
   float : left;
-  width: 40px;
+  width: 40%;
   height: 500px;
 }
 .preview {
