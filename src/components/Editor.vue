@@ -83,7 +83,7 @@ export default{
 }
 .preview {
   float: left;
-  width: 40px;
+  width: 40%;
   text-aligin: left;
 }
 </style>
