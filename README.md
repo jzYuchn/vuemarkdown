@@ -1,6 +1,6 @@
 # vuemarkdown
 
-> A Vue.js project
+> Use firebase 
 
 ## Build Setup
 
