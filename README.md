@@ -2,7 +2,7 @@
 
 
 > A Vue.js project
-> > Use firebase 
+> Use firebase 
 > Now be development
 
 ![](https://i.imgur.com/XWejtAq.png)
