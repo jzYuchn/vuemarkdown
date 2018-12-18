@@ -1,9 +1,9 @@
 # vuemarkdown
 
 
-> A Vue.js project
-> Use firebase 
-> Now be development
+> A Vue.js project  
+> Use firebase   
+> Now be development  
 
 ![](https://i.imgur.com/XWejtAq.png)
 
