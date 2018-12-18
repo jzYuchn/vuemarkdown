@@ -1,6 +1,9 @@
 # vuemarkdown
 
 > A Vue.js project
+> Now be development
+
+![](https://i.imgur.com/XWejtAq.png)
 
 ## Build Setup
 
