@@ -1,11 +1,10 @@
 <template>
-    <div class="container">
-        <h1><img src="../assets/markdownlogo.png" alt=""></h1>
-        <div class="layout">
-                <v-btn color= "white" @click ="googleLogin">LOGIN</v-btn>
-
-        </div>
+    <div class="home">
+      <h1><img  class="logo" src="../assets/markdownlogo.png" alt=""></h1>
+      <div class="">
         <router-link :to="{ name: 'terms' }" class="link">利用規約</router-link>
+      </div>
+      <v-btn class = "login"color= "white" @click ="googleLogin">LOGIN</v-btn>
     </div>
 </template>
 
@@ -19,22 +18,34 @@ export default {
     },
     methods: {
         googleLogin: function() {
-            firebase
-                .auth()
-                    .signInWithRedirect(new firebase.auth.GoogleAuthProvider());
+            firebase.auth().signInWithRedirect(new firebase.auth.GoogleAuthProvider());
         }
     }
 }
 </script>
 
 <style lang="scss" scoped>
-.container {
-    text-align: center;
-    width: 600px;
+.home {
+  text-align: center;
+  padding-top: 100px;
+  width: 100%;
 }
+.logo {
+  height: 130px;
+  margin-bottom: 100px;
+  text-align: center;
+}
+
 h1 > img {
-    border-radius: 50%;
-    max-width: 100%;
-    width: 250px;
+  border-radius: 50%;
+  max-width: 100%;
+  width: 250px;
 }
+
+.login {
+  font-size: 20px;
+  padding: 5px 20px;
+  text-align: center;
+}
+
 </style>
